@@ -25,9 +25,12 @@ export const Cluster = ({ pointCount, totalPoints, onClickAction, ...rest }: Clu
         alignItems: "center",
         transform: "translateX(-50%) translateY(-50%)",
         borderRadius: "100%",
+        border: "3px solid black",
         background: "orange",
-        color: "white",
-        fontSize: "12px",
+        color: "black",
+        fontSize: "14px",
+        letterSpacing: "1px",
+        fontWeight: "bold",
       }}
       {...rest}
     >
