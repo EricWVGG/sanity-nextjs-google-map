@@ -18,6 +18,7 @@ export const Pin = ({ onClickAction, ...rest }: PinProps) => (
       transform: "translateX(-50%) translateY(-50%)",
       background: "magenta",
       color: "white",
+      cursor: "pointer",
     }}
     onClick={onClickAction}
     {...rest}

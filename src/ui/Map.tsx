@@ -12,7 +12,7 @@ import { Cluster } from "./Cluster"
 
 const MAP_DEFAULT_LAT = 40.7230692
 const MAP_DEFAULT_LNG = -73.9798029
-const MAP_DEFAULT_ZOOM = 10
+const MAP_DEFAULT_ZOOM = 14
 const MAP_CLUSTER_RADIUS = 120
 const MAP_MAX_ZOOM = 20
 const GOOGLE_MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY
@@ -101,7 +101,7 @@ const UnhydratedMap = ({ locations }: { locations: Sanity.MapLocationsQueryResul
 
         {/* insert: cluster components */}
 
-        <Popup location={activeLocation || undefined} lat={activeLocation?.geoLocation?.latitude} lng={activeLocation?.geoLocation?.longitude} />
+        <Popup location={activeLocation || undefined} lat={activeLocation?.latitude} lng={activeLocation?.longitude} />
       </GoogleMapReact>
 
       {/* see NOTE 3 */}

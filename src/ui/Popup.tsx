@@ -8,10 +8,12 @@ interface PopupProps {
 export const Popup = ({ location, ...rest }: PopupProps) => (
   <div
     style={{
-      display: !!rest.lat && !!rest.lng ? "block" : "none",
+      position: "absolute",
+      display: !!location ? "block" : "none",
       padding: "4px",
       background: "green",
       color: "white",
+      whiteSpace: "nowrap",
     }}
     {...rest}
   >
