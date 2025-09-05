@@ -3,7 +3,7 @@
 interface PopupProps {
   lat?: number
   lng?: number
-  location?: Member<Sanity.MapLocationsQueryResult>
+  location?: ArrayElement<Sanity.MapLocationsQueryResult>
 }
 export const Popup = ({ location, ...rest }: PopupProps) => (
   <div

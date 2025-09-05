@@ -1,5 +1,5 @@
 declare global {
-  declare type Member<A> = A extends readonly (infer T)[] ? T : never
+  declare type ArrayElement<ArrayType extends readonly unknown[]> = ArrayType extends readonly (infer ElementType)[] ? ElementType : never
 }
 
 export * from "./sanity"

@@ -18,7 +18,7 @@ const UnhydratedMap = ({ locations }: { locations: Sanity.MapLocationsQueryResul
   const [zoom, setZoom] = useState(MAP_DEFAULT_ZOOM)
   const mapRef = useRef<any>(null)
 
-  const [activeLocation, setActiveLocation] = useState<Member<Sanity.MapLocationsQueryResult> | null>(null)
+  const [activeLocation, setActiveLocation] = useState<ArrayElement<Sanity.MapLocationsQueryResult> | null>(null)
   useEffect(() => setActiveLocation(null), [bounds])
 
   const points = useMemo(
@@ -110,7 +110,7 @@ interface MarkerProperties {
   cluster_id?: number
   point_count?: number
   point_count_abbreviated?: number
-  locationData: Member<Sanity.MapLocationsQueryResult>
+  locationData: ArrayElement<Sanity.MapLocationsQueryResult>
 }
 
 export const Map = dynamic(() => Promise.resolve(UnhydratedMap), { ssr: false })
