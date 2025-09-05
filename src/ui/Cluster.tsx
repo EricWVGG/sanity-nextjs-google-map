@@ -8,7 +8,7 @@ interface ClusterProps {
   onClickAction: () => void
 }
 
-const MIN_CLUSTER_SIZE = 40
+const MIN_CLUSTER_SIZE = 25
 const MAX_CLUSTER_SIZE = 100
 
 export const Cluster = ({ pointCount, totalPoints, onClickAction, ...rest }: ClusterProps) => {

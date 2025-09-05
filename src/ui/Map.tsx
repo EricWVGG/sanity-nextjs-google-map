@@ -1,7 +1,7 @@
 "use client"
 
 import GoogleMapReact from "google-map-react"
-import { useState, useMemo, useRef } from "react"
+import { useEffect, useState, useMemo, useRef } from "react"
 import { useWindowSize } from "usehooks-ts"
 import { Pin } from "./Pin"
 import dynamic from "next/dynamic"
@@ -14,11 +14,12 @@ import { MAP_DEFAULT_LAT, MAP_DEFAULT_LNG, MAP_DEFAULT_ZOOM, MAP_CLUSTER_RADIUS,
 const UnhydratedMap = ({ locations }: { locations: Sanity.MapLocationsQueryResult }) => {
   const { width } = useWindowSize()
 
-  const [activeLocation, setActiveLocation] = useState<Member<Sanity.MapLocationsQueryResult> | null>(null)
-
   const [bounds, setBounds] = useState<[number, number, number, number]>([0, 0, 0, 0])
   const [zoom, setZoom] = useState(MAP_DEFAULT_ZOOM)
   const mapRef = useRef<any>(null)
+
+  const [activeLocation, setActiveLocation] = useState<Member<Sanity.MapLocationsQueryResult> | null>(null)
+  useEffect(() => setActiveLocation(null), [bounds])
 
   const points = useMemo(
     () =>
