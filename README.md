@@ -10,3 +10,5 @@ To run this demo…
 - rename that file to `.env`
 - run `pn run seed` to seed the Sanity project.
 - run `pn run dev` to start the show.
+
+// todo: new pin screenshots
